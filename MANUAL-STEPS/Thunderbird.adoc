@@ -1,0 +1,66 @@
+= Thunderbird customization
+
+== Customization
+
+=== Spelling
+. ☰ -> Preferences -> Preferences
+. Composition
+. Spelling
+. Choose the default language
+
+=== Flow / text wrapping + disable Autocrypt
+. ☰ -> Preferences -> Preferences
+
+. Advanced
+
+. General
+
+. Config Editor
+* mailnews.wraplength: 0
+* mail.server.default.enableAutocrypt: false +
+  Note: enableAutocrypt will only be available if an encryption extension has been installed. Can be ignored if not present.
+
+
+=== Threaded view
+. ☰ -> View
+. Sort by
+. threaded
+
+=== Default to plain text and quotation
+. right click on account name
+. Settings
+. Composition & Addressing
+. Deselect Compose messages in HTML format
+. Automatically quote the original message when replyng -> start my reply below the quote
+
+=== Signature file
+. right click on account name
+. Settings
+. Attach the signature file
+
+=== Retention on Sent and Deleted
+. right click on folder
+. Properties
+. Retention Policy
+
+
+== CardBook
+CardBook is a Thunderbird extension that manages Contacts via vCard, allowing for example, full 2-way sync with Googl Contacts.
+
+=== Install
+. ☰ -> Add-ons
+. Extensions -> Disable "Messaging Menu and Unity Launcher integration
+. Get Add-ons -> More ways to customize / Browse all add-ons
+. search for "cardbook"
+. Add to Thunderbird -> Install Now
+. Restart Thunderbird
+
+=== Setup
+* CardBook -> ☰ -> Address Book -> New Address Book -> remote
+* Right click on "Collected Addresses" -> Delete Address Book (if present)
+* Right click on "Personal Address Book" -> Delete Address Book (if present)
+
+To collect outgoing email:
+
+* CardBook -> ☼ Preferences -> Email -> Collect Outgoing Email
+

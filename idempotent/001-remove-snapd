@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+# References:
+# https://www.kevin-custer.com/blog/disabling-snaps-in-ubuntu-20-04/
+# https://news.ycombinator.com/item?id=22972661
+
+which snap >/dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+  sudo snap remove snap-store
+  sudo snap remove gtk-common-themes gnome-3-34-1804
+  #sudo snap remove gtk-common-themes
+  #sudo snap remove gnome-3-34-1804
+  sudo snap remove core18
+  sudo pkill -f unattended-upgr
+  sleep 5
+  sudo apt purge -y snapd
+fi
+
+rm -rf ~/snap
+sudo rm -rf /snap /var/snap /var/lib/snapd
+#sudo rm -rf /var/snap
+#sudo rm -rf /var/lib/snapd
+
+# prevent snapd to be inadvertently installed as a dependency from another package
+sudo apt-mark hold snapd

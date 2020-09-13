@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+TMPFILE=mktemp
+trap "rm -rf $TMPFILE" EXIT
+cut -d\# -f1 ../files/packages.common  |grep -v '^$' >$TMPFILE
+sudo xargs -a $TMPFILE apt install -y
+
+sudo apt upgrade -y
+sudo apt autoremove
+
+# To avoid the "System program problem detected"
+rm -f /var/crash/*
+

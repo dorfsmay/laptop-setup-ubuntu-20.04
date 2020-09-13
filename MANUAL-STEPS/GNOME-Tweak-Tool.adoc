@@ -1,0 +1,30 @@
+= GNOME Tweak Tool customizations
+
+== Focus follow mouse
+. Windows
+. Windows Focus
+
+== Window Titlebar
+. Windows
+* Titlebar Actions -> Double-Click -> None
+* Titlebar Buttons -> Maximize -> ON
+* Titlebar Buttons -> Minimize -> ON  
+
+== Date on top bar
+. Top Bar 
+. Clock -> Date
+
+== Topicons plus
+. Extensions
+. Topiocon plus -> ON
+. ⚙ -> Tray horizontal alignment
+
+== Trackpad setting
+. Keyboard and Mouse
+. Mouse Click Emulation
+. Area
+
+== Redshift
+. Extensions (Redshift extension needs to be installed)
+. Redshift
+

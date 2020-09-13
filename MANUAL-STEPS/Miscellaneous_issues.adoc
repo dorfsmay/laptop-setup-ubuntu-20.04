@@ -1,0 +1,15 @@
+= Miscellaneous issues
+
+== Screen rotated at 90°
+Some laptops have issues with their orientation sensor resulting in the screen rotated 90° left.
+
+=== Immediate fix
+. open a terminal `[Ctrl]` + `[Alt]` + `[F2]`
+. type: `xrandr -o normal`
+
+=== Keep orientation
+To keep the orientation between resumes and reboots:
+. run `xrandr -o normal` as explained above
+. Go to System Menu (hit the top right hand corner with the cursor)
+. Select "Lock Screen Rotation"
+

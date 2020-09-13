@@ -1,0 +1,46 @@
+#!/bin/bash -e
+
+# unattended-upgr sometimes kicks in and blocks all dpkg/apt process
+sudo pkill -f unattended-upgr
+sleep 5
+
+# Switch to the "upstream GNOME Experience"
+# (ref: https://support.system76.com/articles/desktop-environment/)
+sudo apt install -y gnome-session gnome vanilla-gnome-desktop
+
+
+# Remove other desktop
+sudo apt purge -y --allow-remove-essential ubuntu-desktop ubuntu-desktop-minimal ubuntu-session
+sudo apt autoremove -y
+
+# Do not list users in GDM3 login screen
+# TODO: investigate how to move this into either /etc/gdm3/custome.conf or /etc/dconf/db/ibus.d
+sudo -Hu gdm dbus-launch gsettings set org.gnome.login-screen disable-user-list true
+
+# Not sure what the impact of this link is, I originally thought it would set the desktop for new users, but not the case.
+# Please do let me know if you find out.
+####(cd /usr/share/xsessions && sudo ln -fs gnome-xorg.desktop gnome.desktop)
+
+# Change default xsession for new users - couldn't find how, and looks like I'm not the only one:
+# https://askubuntu.com/questions/1220523/default-xsession-for-new-users
+
+# Change xsession for current user to "GNOME on Xorg"
+sudo sed -ie 's/XSession=.*/XSession=gnome-xorg/' /var/lib/AccountsService/users/${USER}
+
+# Get Legacy Tray icons (tray no longer available in new versions of GNOME) in top bar
+####sudo apt install -y gnome-shell-extension-top-icons-plus
+
+# extra required packages
+sudo apt install -y gnome-tweaks gnome-shell-extension-multi-monitors
+
+# install exta wallpapers
+sudo apt install -y peace-wallpapers ubuntu-wallpapers-artful
+
+# set background to current peace wallpaper
+gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/Ubuntu-Peace_1600x1200.jpg
+
+sudo apt autoremove -y
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
+
