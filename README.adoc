@@ -32,8 +32,8 @@ https://en.wikipedia.org/wiki/Lindy_effect[Lindy effect] predicts that it will b
 . Get files and unzip::
 
  cd /var/tmp
- wget https://github.com/dorfsmay/laptop-setup-ubuntu-20.04/archive/master.zip
- unzip master.zip
+ wget https://github.com/dorfsmay/laptop-setup-ubuntu-20.04/archive/main.zip
+ unzip main.zip
 
 . Install everything 
 
@@ -42,7 +42,7 @@ https://en.wikipedia.org/wiki/Lindy_effect[Lindy effect] predicts that it will b
 
 . reboot
 
-. Check manual steps in the https://github.com/dorfsmay/laptop-setup-ubuntu-18.04/tree/master/MANUAL-STEPS[MANUAL-STEPS] directory
+. Check manual steps in the https://github.com/dorfsmay/laptop-setup-ubuntu-18.04/tree/main/MANUAL-STEPS[MANUAL-STEPS] directory
 
 == Regular updates
 
