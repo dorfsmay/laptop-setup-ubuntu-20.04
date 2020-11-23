@@ -1,7 +1,7 @@
 
 = Customize Ubuntu 20.04 to run with vanilla GNOME and without snap
 
-*This is no longer maintained as I am moving my desktops to another distribution*
+*This is no longer maintained, I am now using Fedora: https://github.com/dorfsmay/fedora-workstation-setup*
 
 Running all the scripts (or the "`runall.bash`" script) will install *vanilla GNOME*, *remove snap and snap packages*, and install packages according to my personal preferences.
 Pick and chose scripts to suit your own needs.
